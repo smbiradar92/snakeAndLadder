@@ -2,8 +2,9 @@
 
 class SnakeAndLadder
 {
-    public $position = 0;           //initialise varibles
+    public $position = 0;           //initialize varibles
     public $diceNum = 0;
+    public $diceCount = 0;
 
     function welcomeMsg()
     {
@@ -14,6 +15,8 @@ class SnakeAndLadder
     {
         $this->position = 0;
         while ($this->position != 100) {                                    //UC4 while condition for repeating the play till winning position is reached
+            $this->diceCount++;                                             // UC 6dice role count
+            echo "Dice count :" . $this->diceCount . "\n";
             $this->diceNum = rand(1, 6);
             echo "The dice number is : " . $this->diceNum . "\n";
             $options = rand(0, 2);
@@ -41,7 +44,9 @@ class SnakeAndLadder
             }
             echo "----------------------------------------------------------\n";                        // end condition!!! if player reached position 100, he wins the game
             if ($this->position == 100) {
-                echo "You have reached position: $this->position.\nYou have won the game!!!!!\n-------------------Game Over------------------------\nThank you for playing the game. Have a nice day!!!\n";
+                echo "You have reached position: $this->position.\nYou have won the game!!!!!\n-------------------Game Over------------------------\n";
+                echo "The number of times the dice rolled is " . $this->diceCount;                               // UC6 the total number of times dice rolled
+                echo "Thank you for playing the game. Have a nice day!!!\n";
             }
         }
     }
