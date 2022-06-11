@@ -28,13 +28,13 @@ class SnakeAndLadder
                     if ($this->position < 0) {
                         $this->position = $this->position + $this->diceNum;
                     }
-                    echo "your current this->position is " . $this->position . "\n";
+                    echo "your current position is " . $this->position . "\n";
                     break;
                 case 2:
                     echo "You have recahed a ladder:)\nYou can move ahead by $this->diceNum numbers.\n";
                     $this->position = $this->position + $this->diceNum;                                     // at ladder position the player moves by dice number value 
-                    if ($this->position > 100) {                                                              // if player position goes above 100 then his position will 
-                        $this->position = $this->position - $this->diceNum;                                //be moved back with dice number value 
+                    if ($this->position > 100) {                                                              // UC5 if player position goes above 100 then his position will 
+                        $this->position = $this->position;                                                     //be same untill he gets the value to reach 100 
                     }
                     echo "your current position is " . $this->position . "\n";
                     break;
